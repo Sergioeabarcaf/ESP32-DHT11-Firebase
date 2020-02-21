@@ -33,3 +33,10 @@ const long gmtOffset_sec = -4 * 60 * 60;
 ...
 timeClient.setTimeOffset(gmtOffset_sec);
 ``` 
+
+## Versions
+### V0.1
+This version: 
+* get temperature and humidity from DHT11 Sensor.
+* Sync timezone with NTP server.
+* Get epochTime.
