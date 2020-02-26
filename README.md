@@ -11,10 +11,11 @@ Is necessary have the following components:
 
 ### Libraries
 To use this project it is necessary to have the following components installed.
-* [ESP32 Board in IDE Arduino](https://randomnerdtutorials.com/* installing-the-esp32-board-in-arduino-ide-windows-instructions/)
+* [ESP32 Board in IDE Arduino](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/)
 * [Library Adafruit/DHT-Sensor](https://github.com/adafruit/DHT-sensor-library)
 * [Library Adafruit Unified Sensor Driver](https://github.com/adafruit/Adafruit_Sensor)
 * [Library taranais/NTPClient](https://github.com/taranais/NTPClient)
+* [Firebase-ESP32 Library](https://github.com/mobizt/Firebase-ESP32)
 
 ## Notes
 ### DHT11
@@ -34,9 +35,18 @@ const long gmtOffset_sec = -4 * 60 * 60;
 timeClient.setTimeOffset(gmtOffset_sec);
 ``` 
 
+### Firebase
+* Get your credentials Firebase ![credentials Firebase](https://raw.githubusercontent.com/sergioeabarcaf/ESP32-DHT11-FIREBASE/master/firebaseCredential.png)
+
 ## Versions
 ### V0.1
 This version: 
 * get temperature and humidity from DHT11 Sensor.
 * Sync timezone with NTP server.
 * Get epochTime.
+
+### V0.2
+This version:
+* Use [Firebase-ESP32 Library](https://github.com/mobizt/Firebase-ESP32).
+* Send data JSON type.
+* Create function _sendError_. 
