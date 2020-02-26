@@ -36,11 +36,7 @@ timeClient.setTimeOffset(gmtOffset_sec);
 ``` 
 
 ### Firebase
-<<<<<<< HEAD
 * Get your credentials Firebase ![credentials Firebase](https://raw.githubusercontent.com/sergioeabarcaf/ESP32-DHT11-Firebase/master/firebaseCredential.png)
-=======
-* Get your credentials Firebase ![credentials Firebase](https://raw.githubusercontent.com/sergioeabarcaf/ESP32-DHT11-FIREBASE/master/firebaseCredential.png)
->>>>>>> 0fa47265522346ea2e0f3733e6028cdafbd1bd70
 
 ## Versions
 ### V0.1
