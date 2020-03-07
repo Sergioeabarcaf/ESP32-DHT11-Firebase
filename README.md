@@ -27,10 +27,10 @@ To use this project it is necessary to have the following components installed.
 ```
 
 ### NTP
-* Config u timezone [(get timezone)](https://www.timeanddate.com), this is config for UTC -4 (Winter time in Santiago, Chile).
+* Config u timezone [(get timezone)](https://www.timeanddate.com), this is config for UTC -4 (Summer time in Santiago, Chile).
 ```
-// -4 = UTC - 4
-const long gmtOffset_sec = -4 * 60 * 60;
+// -3 = UTC - 3
+const long gmtOffset_sec = -3 * 60 * 60;
 ...
 timeClient.setTimeOffset(gmtOffset_sec);
 ``` 
@@ -38,15 +38,20 @@ timeClient.setTimeOffset(gmtOffset_sec);
 ### Firebase
 * Get your credentials Firebase ![credentials Firebase](https://raw.githubusercontent.com/sergioeabarcaf/ESP32-DHT11-Firebase/master/firebaseCredential.png)
 
-## Versions
+## Releases
 ### V0.1
-This version: 
+This release: 
 * get temperature and humidity from DHT11 Sensor.
 * Sync timezone with NTP server.
 * Get epochTime.
 
 ### V0.2
-This version:
+This release:
 * Use [Firebase-ESP32 Library](https://github.com/mobizt/Firebase-ESP32).
 * Send data JSON type.
 * Create function _sendError_. 
+
+### V0.2.1
+This release:
+* send date formatted.
+* use UTC - 3.
