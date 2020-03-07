@@ -18,7 +18,7 @@ float hum;
 // Variables NTP
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP);
-const long gmtOffset_sec = -4 * 60 * 60;
+const long gmtOffset_sec = -3 * 60 * 60;
 
 // Variables Firebase
 #define FIREBASE_HOST "YOUR_FIREBASE_PROJECT.firebaseio.com"
@@ -58,8 +58,9 @@ void setup() {
 void loop() {
   
   // Validate WiFi connected
-  if (WiFi.status() != WL_CONNECTED) {
-    Serial.println(". - .");
+  while(WiFi.status() != WL_CONNECTED){
+    delay(250);
+    Serial.print(". - . ");
   }
   
   // Update Time
@@ -87,12 +88,12 @@ void loop() {
     json.clear();
     json.add("tem", tem);
     json.add("hum", hum);
-    json.add("epochTime", epochTime);
+    json.add("time", timeClient.getFormattedDate());
 
     if (Firebase.setJSON(firebaseData, path, json)) {
       Serial.println("SEND SUCCESS");
-      // pause 1 minutes
-      delay(1000*60*1);
+      // pause 5 minutes
+      delay(1000*60*5);
         
     } else {
         Serial.println("FAILED");
